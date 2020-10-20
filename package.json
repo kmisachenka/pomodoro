@@ -1,0 +1,47 @@
+{
+  "name": "pomodoro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next",
+    "start": "next start",
+    "build": "next build",
+    "build:analyze": "ANALYZE=true next build",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write **/*.{ts,tsx}",
+    "format:check": "prettier --check **/*.{ts,tsx}",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "npm run lint --fix",
+    "check:all": "npm run type-check && npm run format:check && npm run lint"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "^1.0.0-rc.5",
+    "@next/bundle-analyzer": "^9.5.5",
+    "next": "^9.5.5",
+    "next-compose-plugins": "^2.2.0",
+    "next-i18next": "^6.0.3",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0"
+  },
+  "devDependencies": {
+    "@arkweid/lefthook": "^0.7.2",
+    "@types/next": "^9.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@typescript-eslint/eslint-plugin": "^4.5.0",
+    "@typescript-eslint/parser": "^4.5.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.13.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.1.2",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-simple-import-sort": "^5.0.3",
+    "eslint-plugin-unicorn": "^23.0.0",
+    "prettier": "^2.1.2",
+    "typescript": "^4.0.3"
+  }
+}

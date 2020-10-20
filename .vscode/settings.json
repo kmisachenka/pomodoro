@@ -1,0 +1,20 @@
+{
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.suggestSelection": "first",
+  "references.preferredLocation": "view",
+  "editor.suggest.maxVisibleSuggestions": 5,
+  "editor.rulers": [80],
+  "editor.formatOnSave": true,
+  "eslint.packageManager": "npm",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/build": true,
+    "**/.next": true,
+    "**/package-lock.json": true,
+  }
+}

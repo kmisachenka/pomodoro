@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "editorconfig.editorconfig",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "wix.vscode-import-cost",
+    "ms-vscode.vscode-typescript-next",
+    "oderwat.indent-rainbow"
+  ]
+}
