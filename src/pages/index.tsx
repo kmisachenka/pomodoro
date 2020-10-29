@@ -1,28 +1,57 @@
-import { Button } from '@chakra-ui/react';
+import {
+  Box,
+  Button,
+  Center,
+  CircularProgress,
+  CircularProgressLabel,
+  Flex,
+} from '@chakra-ui/core';
 import { NextPage } from 'next';
-import React from 'react';
-
-import { Link, useTranslation } from '../i18n';
+import { CircleIcon } from 'src/components/circle-icon';
+import { SettingsModal } from 'src/components/settings-modal';
 
 const IndexPage: NextPage = () => {
-  const { t, i18n } = useTranslation();
-
-  const handleChangeLanguageClick = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-  };
-
   return (
-    <div>
-      <h1>{t('hello-world')}</h1>
-      <Button colorScheme="green" size="lg" onClick={handleChangeLanguageClick}>
-        {t('change-language')}
-      </Button>
-      <Link href="/second-page">
-        <Button colorScheme="red" size="lg">
-          {t('goto-second-page')}
-        </Button>
-      </Link>
-    </div>
+    <Flex marginTop="5rem">
+      <Center width="100%">
+        <Flex direction="column">
+          <Flex justifyContent="flex-end">
+            <SettingsModal />
+          </Flex>
+          <CircularProgress
+            value={98}
+            color="red.400"
+            size="350px"
+            thickness="3px"
+          >
+            <CircularProgressLabel>25:00</CircularProgressLabel>
+          </CircularProgress>
+          <Flex justifyContent="center" paddingTop="1rem" paddingBottom="2rem">
+            <CircleIcon color="red.400" />
+            <CircleIcon color="red.400" />
+            <CircleIcon color="red.400" />
+            <CircleIcon color="red.400" />
+            <Box width="20px" />
+            <CircleIcon color="red.400" />
+            <CircleIcon color="red.400" />
+            <CircleIcon color="red.400" />
+            <CircleIcon color="red.400" />
+            <Box width="20px" />
+            <CircleIcon color="red.400" />
+            <CircleIcon color="gray.400" />
+            <CircleIcon color="gray.400" />
+            <CircleIcon color="gray.400" />
+          </Flex>
+          <Box width="70%" margin="0 auto">
+            <Flex justifyContent="space-around">
+              <Button>Start</Button>
+              <Button>Stop</Button>
+              <Button>Reset</Button>
+            </Flex>
+          </Box>
+        </Flex>
+      </Center>
+    </Flex>
   );
 };
 
