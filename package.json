@@ -16,7 +16,7 @@
     "check:all": "npm run type-check && npm run format:check && npm run lint"
   },
   "dependencies": {
-    "@chakra-ui/core": "^1.0.0-rc.7",
+    "@chakra-ui/core": "^1.0.0-rc.8",
     "@next/bundle-analyzer": "^10.0.0",
     "framer-motion": "^2.9.4",
     "next": "^10.0.0",
