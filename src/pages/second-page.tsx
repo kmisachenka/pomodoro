@@ -1,4 +1,4 @@
-import { Button } from '@chakra-ui/core';
+import { Button } from '@chakra-ui/react';
 import React from 'react';
 
 import { Link, useTranslation } from '../i18n';
