@@ -20,7 +20,7 @@
     "@emotion/react": "^11.0.0",
     "@emotion/styled": "^11.0.0",
     "@next/bundle-analyzer": "^10.0.1",
-    "framer-motion": "^2.9.4",
+    "framer-motion": "^2.9.5",
     "next": "^10.0.3",
     "next-compose-plugins": "^2.2.1",
     "next-i18next": "^7.0.1",
