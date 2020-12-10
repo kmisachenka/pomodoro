@@ -1,7 +1,12 @@
 {
-  "hello-world": " Привет, Мир!",
-  "goto-second-page": "Перейти на другую страницу",
-  "change-language": "Сменить язык",
-  "welcome": "Это другая страница",
-  "go-back": "Назад"
+  "start": "Старт",
+  "stop": "Стоп",
+  "reset": "Сбросить",
+  "change-language": "Изменить язык",
+  "settings": {
+    "heading": "Настройки",
+    "language": "Язык",
+    "close": "Закрыть",
+    "save": "Сохранить"
+  }
 }

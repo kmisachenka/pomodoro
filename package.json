@@ -16,6 +16,7 @@
     "check:all": "npm run type-check && npm run format:check && npm run lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.1",
     "@chakra-ui/react": "^1.0.3",
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
@@ -25,7 +26,8 @@
     "next-compose-plugins": "^2.2.1",
     "next-i18next": "^7.0.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "react-hook-form": "^6.13.0"
   },
   "devDependencies": {
     "@arkweid/lefthook": "^0.7.2",

@@ -4,7 +4,10 @@ const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 });
 
-const localeSubpaths = {};
+const localeSubpaths = {
+  ru: 'ru',
+  en: 'en',
+};
 
 const defaultConfig = {
   rewrites: async () => nextI18NextRewrites(localeSubpaths),

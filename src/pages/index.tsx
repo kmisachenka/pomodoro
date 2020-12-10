@@ -1,57 +1,102 @@
 import {
-  Box,
   Button,
-  Center,
+  ButtonGroup,
   CircularProgress,
   CircularProgressLabel,
+  Container,
   Flex,
-} from '@chakra-ui/core';
+  useColorModeValue,
+} from '@chakra-ui/react';
 import { NextPage } from 'next';
-import { CircleIcon } from 'src/components/circle-icon';
-import { SettingsModal } from 'src/components/settings-modal';
+import React, { useRef, useState } from 'react';
+
+import Header from '../components/header';
+import useTitle from '../hooks/use-title';
+import { useTranslation } from '../i18n';
+
+function padTime(time) {
+  return time.toString().padStart(2, '0');
+}
+
+const INITIAL_TIME_LEFT = 25 * 60;
 
 const IndexPage: NextPage = () => {
+  const { t } = useTranslation();
+
+  const [timeLeft, setTimeLeft] = useState(INITIAL_TIME_LEFT);
+  const [isRunning, setIsRunning] = useState(false);
+  const intervalReference = useRef(null);
+
+  function startTimer() {
+    if (intervalReference.current !== null) return;
+
+    setIsRunning(true);
+    intervalReference.current = setInterval(() => {
+      setTimeLeft((timeLeft) => {
+        if (timeLeft >= 1) return timeLeft - 1;
+
+        resetTimer();
+        return 0;
+      });
+    }, 1000);
+  }
+
+  function stopTimer() {
+    if (intervalReference.current === null) return;
+
+    clearInterval(intervalReference.current);
+    intervalReference.current = null;
+    setIsRunning(false);
+  }
+
+  function resetTimer() {
+    clearInterval(intervalReference.current);
+    intervalReference.current = null;
+    setTimeLeft(INITIAL_TIME_LEFT);
+    setIsRunning(false);
+  }
+
+  const circularProgressValue = INITIAL_TIME_LEFT - timeLeft;
+  const minutes = padTime(Math.floor(timeLeft / 60));
+  const seconds = padTime(timeLeft - minutes * 60);
+
+  const timeLeftPretty = `${minutes}:${seconds}`;
+
+  useTitle(`Pomodoro: ${timeLeftPretty}`);
+
+  const color = useColorModeValue('gray.300', 'gray.400');
+
   return (
-    <Flex marginTop="5rem">
-      <Center width="100%">
+    <React.Fragment>
+      <Header />
+      <Container maxW="lg" marginTop="3rem" centerContent color="gray.500">
         <Flex direction="column">
-          <Flex justifyContent="flex-end">
-            <SettingsModal />
-          </Flex>
           <CircularProgress
-            value={98}
+            value={circularProgressValue}
             color="red.400"
-            size="350px"
+            trackColor={color}
+            size="450px"
             thickness="3px"
+            max={INITIAL_TIME_LEFT}
+            min={0}
           >
-            <CircularProgressLabel>25:00</CircularProgressLabel>
+            <CircularProgressLabel
+              style={{ fontFamily: 'monospace' }}
+              color="gray.500"
+            >
+              {timeLeftPretty}
+            </CircularProgressLabel>
           </CircularProgress>
-          <Flex justifyContent="center" paddingTop="1rem" paddingBottom="2rem">
-            <CircleIcon color="red.400" />
-            <CircleIcon color="red.400" />
-            <CircleIcon color="red.400" />
-            <CircleIcon color="red.400" />
-            <Box width="20px" />
-            <CircleIcon color="red.400" />
-            <CircleIcon color="red.400" />
-            <CircleIcon color="red.400" />
-            <CircleIcon color="red.400" />
-            <Box width="20px" />
-            <CircleIcon color="red.400" />
-            <CircleIcon color="gray.400" />
-            <CircleIcon color="gray.400" />
-            <CircleIcon color="gray.400" />
-          </Flex>
-          <Box width="70%" margin="0 auto">
-            <Flex justifyContent="space-around">
-              <Button>Start</Button>
-              <Button>Stop</Button>
-              <Button>Reset</Button>
+          <ButtonGroup>
+            <Flex width="50%" margin="0 auto" justifyContent="space-around">
+              {!isRunning && <Button onClick={startTimer}>{t('start')}</Button>}
+              {isRunning && <Button onClick={stopTimer}>{t('stop')}</Button>}
+              <Button onClick={resetTimer}>{t('reset')}</Button>
             </Flex>
-          </Box>
+          </ButtonGroup>
         </Flex>
-      </Center>
-    </Flex>
+      </Container>
+    </React.Fragment>
   );
 };
 

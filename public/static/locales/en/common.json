@@ -1,7 +1,12 @@
 {
-  "hello-world": "Hello, World!",
-  "goto-second-page": "Goto Second Page",
-  "change-language": "Change Language",
-  "welcome": "Welcome To Second Page",
-  "go-back": "Go Back"
+  "start": "Start",
+  "stop": "Stop",
+  "reset": "Reset",
+  "change-language": "Change language",
+  "settings": {
+    "heading": "Settings",
+    "language": "Language",
+    "close": "Close",
+    "save": "Save"
+  }
 }

@@ -65,6 +65,7 @@
             "i": true
           }
         }
-      ]
+      ],
+      "unicorn/no-null": "off"
     }
   }
