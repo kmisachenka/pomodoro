@@ -16,7 +16,7 @@
     "check:all": "npm run type-check && npm run format:check && npm run lint"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.0.3",
+    "@chakra-ui/react": "^1.0.4",
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
     "@next/bundle-analyzer": "^10.0.3",
