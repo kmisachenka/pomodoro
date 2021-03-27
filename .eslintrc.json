@@ -1,37 +1,43 @@
 {
     "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
     "plugins": [
-      "@typescript-eslint",
       "promise",
       "simple-import-sort",
       "import",
       "security",
-      "prettier"
+      "prettier",
+      "cypress"
     ],
     "extends": [
+      "plugin:cypress/recommended",
       "plugin:eslint-comments/recommended",
       "plugin:promise/recommended",
       "eslint:recommended",
       "plugin:react/recommended",
       "plugin:react-hooks/recommended",
-      "plugin:@typescript-eslint/recommended",
       "plugin:unicorn/recommended",
       "plugin:security/recommended",
-      "prettier",
-      "prettier/@typescript-eslint"
+      "prettier"
     ],
     "env": {
       "es6": true,
       "browser": true,
       "jest": true,
-      "node": true
+      "node": true,
+      "cypress/globals": true
     },
     "settings": {
       "react": {
-        "version": "16"
+        "version": "17"
       }
     },
     "rules": {
+
       "simple-import-sort/imports": "error",
       "simple-import-sort/exports": "error",
       "sort-imports": "off",
@@ -43,12 +49,6 @@
       "react/react-in-jsx-scope": 0,
       "react/display-name": 0,
       "react/prop-types": 0,
-      "@typescript-eslint/no-unused-vars": [
-        2,
-        {
-          "argsIgnorePattern": "^_"
-        }
-      ],
       "no-console": [
         2,
         {

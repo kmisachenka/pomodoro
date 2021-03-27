@@ -1,8 +1,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
+    "target": "ES5",
+    "module": "CommonJS",
     "jsx": "preserve",
     "allowJs": true,
     "moduleResolution": "node",
@@ -12,15 +12,24 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
-    "skipLibCheck": true,
     "baseUrl": ".",
+    "paths": {
+      "@/components/*": [
+        "components/*"
+      ],
+      "@/hooks/*": [
+        "hooks/*"
+      ]
+    },
+    "types": [
+      "jest"
+    ],
     "typeRoots": [
       "./node_modules/@types"
     ],
     "lib": [
-      "dom",
-      "es2015",
-      "es2016"
+      "ES2015",
+      "DOM"
     ],
     "strict": false,
     "forceConsistentCasingInFileNames": true,
@@ -28,13 +37,13 @@
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "skipLibCheck": true
   },
-  "exclude": [
-    "node_modules"
-  ],
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

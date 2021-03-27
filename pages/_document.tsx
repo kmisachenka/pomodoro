@@ -15,7 +15,7 @@ export default class MyDocument extends Document {
     return Document.getInitialProps(context);
   }
 
-  render(): JSX.Element {
+  render() {
     return (
       <Html>
         <Head />
