@@ -20,6 +20,8 @@ const IndexPage: NextPage = () => {
   const { t } = useTranslation();
   const color = useColorModeValue('gray.300', 'gray.400');
 
+  useTitle('Pomodoro');
+
   const {
     startTimer,
     stopTimer,
@@ -29,8 +31,6 @@ const IndexPage: NextPage = () => {
     timeLeftPretty,
     isRunning,
   } = useTimer();
-
-  useTitle(`Pomodoro: ${timeLeftPretty}`);
 
   return (
     <React.Fragment>

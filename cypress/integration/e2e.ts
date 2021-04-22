@@ -53,3 +53,5 @@ describe('[e2e] Pomodoro App', () => {
     cy.findByText('Close').should('exist');
   });
 });
+
+export {};

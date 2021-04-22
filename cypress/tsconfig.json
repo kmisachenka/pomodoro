@@ -1,5 +1,5 @@
 {
-  "extends": "../tsconfig.json",
+  // "extends": "../tsconfig.json",
   "compilerOptions": {
     "target": "es5",
     "lib": ["es5", "dom"],
@@ -11,5 +11,9 @@
       "@testing-library/cypress"
     ],
     "isolatedModules": false
-  }
+  },
+  "include": [
+    "../node_modules/cypress",
+    "./**/*.ts"
+  ]
 }
