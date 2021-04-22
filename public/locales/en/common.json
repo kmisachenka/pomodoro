@@ -1,0 +1,12 @@
+{
+  "start": "Start",
+  "stop": "Stop",
+  "reset": "Reset",
+  "change-language": "Change language",
+  "settings": {
+    "heading": "Settings",
+    "language": "Language",
+    "close": "Close",
+    "save": "Save"
+  }
+}

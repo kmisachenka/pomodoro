@@ -9,3 +9,6 @@ check:
 
 upgrade-deps:
 	npx npm-upgrade
+
+test:
+	npm run test

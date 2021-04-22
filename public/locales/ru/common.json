@@ -1,0 +1,12 @@
+{
+  "start": "Старт",
+  "stop": "Стоп",
+  "reset": "Сбросить",
+  "change-language": "Изменить язык",
+  "settings": {
+    "heading": "Настройки",
+    "language": "Язык",
+    "close": "Закрыть",
+    "save": "Сохранить"
+  }
+}
