@@ -1,6 +1,5 @@
 import { ChakraProvider } from '@chakra-ui/react';
 import App from 'next/app';
-import { appWithTranslation } from 'next-i18next';
 import React from 'react';
 
 class MyApp extends App {
@@ -15,4 +14,4 @@ class MyApp extends App {
   }
 }
 
-export default appWithTranslation(MyApp);
+export default MyApp;

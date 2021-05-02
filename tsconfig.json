@@ -22,9 +22,7 @@
       ]
     },
     "types": [
-      "jest",
-      "cypress",
-      "@testing-library/cypress"
+      "jest"
     ],
     "typeRoots": [
       "./node_modules/@types"
