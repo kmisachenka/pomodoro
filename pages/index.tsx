@@ -8,8 +8,6 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { NextPage } from 'next';
-import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import React from 'react';
 import { useTitle } from 'react-use';
 
@@ -17,7 +15,6 @@ import Header from '@/components/header';
 import useTimer from '@/hooks/use-timer';
 
 const IndexPage: NextPage = () => {
-  const { t } = useTranslation();
   const color = useColorModeValue('gray.300', 'gray.400');
 
   useTitle('Pomodoro');
@@ -55,9 +52,9 @@ const IndexPage: NextPage = () => {
           </CircularProgress>
           <ButtonGroup>
             <Flex width="50%" margin="0 auto" justifyContent="space-around">
-              {!isRunning && <Button onClick={startTimer}>{t('start')}</Button>}
-              {isRunning && <Button onClick={stopTimer}>{t('stop')}</Button>}
-              <Button onClick={resetTimer}>{t('reset')}</Button>
+              {!isRunning && <Button onClick={startTimer}>Start</Button>}
+              {isRunning && <Button onClick={stopTimer}>Stop</Button>}
+              <Button onClick={resetTimer}>Reset</Button>
             </Flex>
           </ButtonGroup>
         </Flex>
@@ -65,11 +62,5 @@ const IndexPage: NextPage = () => {
     </React.Fragment>
   );
 };
-
-export const getServerSideProps = async ({ locale }: any) => ({
-  props: {
-    ...(await serverSideTranslations(locale, ['common'])),
-  },
-});
 
 export default IndexPage;

@@ -10,11 +10,9 @@
       "simple-import-sort",
       "import",
       "security",
-      "prettier",
-      "cypress"
+      "prettier"
     ],
     "extends": [
-      "plugin:cypress/recommended",
       "plugin:eslint-comments/recommended",
       "plugin:promise/recommended",
       "eslint:recommended",
@@ -28,8 +26,7 @@
       "es6": true,
       "browser": true,
       "jest": true,
-      "node": true,
-      "cypress/globals": true
+      "node": true
     },
     "settings": {
       "react": {
@@ -59,7 +56,7 @@
         "error",
         {
           "checkFilenames": false,
-          "whitelist": {
+          "allowList": {
             "props": true,
             "Props": true,
             "i": true
